@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Menu</title>
+  <link href="../css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style>
+  .menu-container {
+    padding:15px;
+  }
+  
+.menu-container #menu-img {
+    border:solid black 1.5px;
+}
+  
+#menu-img {
+    width:auto;
+    height:auto;
+    display: block;
+    margin:auto;
+}
+  
+.menu-bar-container {
+    text-align: center;
+}
+  
+#logo{
+    display:inline-block;
+    width:150px;
+    height:75px;
+    margin:auto;
+}
+  
+#menupage {
+    background-image: url("../images/boba.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.form {
+    display: block;
+    text-align: center;
+}  
+      
+.inline-field input, .inline-field label {
+    display: inline-block;
+    margin-bottom: 0; /* I added this after I posted my reply */
+    vertical-align: middle; /* Fixes any weird issues in Firefox and IE */
+}
+
+.total-container {
+  text-align:left
+}
+
+form {
+  background-color: #FFE8C9;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  border: 1px solid black;
+  padding:5px;
+  }
+
+#formtitle {
+  text-align:center;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.orange {
+  border-color: #ff9800;
+  color: orange;
+}
+
+.orange:hover {
+  background: #ff9800;
+  color: white;
+}
+</style>
+
+<body id="menupage">
+<div class="menu-bar-container">
+  <img src="../images/crafti.png" alt="bobalogo image" title="bobologo image" id="logo">
+</div>
+  
+<div class ="menu-container">
+<img src="../images/CRAFTI.jpg" alt="bobamenu image" title="menu image" id="menu-img">
+</div>
+
+  <!--checkbox for the products -->
+  <div class="form">
+  <form id="drinks" action="http://localhost:8080" method="get">
+    <h1 id="formtitle">Order</h1>
+    <div class="inline-field">
+       <fieldset id="specialty">
+          <legend>Crafti Specialty:</legend>
+          <input type="checkbox" id="crafti1" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Fresh Taro Milk" data-price="5.75">
+          <label for="crafti1">Fresh Taro Milk</label><br>
+          <input type="checkbox" id="crafti2" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Sunset Sparkles" data-price="5.75">
+          <label for="crafti2">Sunset Sparkles</label><br>
+          <input type="checkbox" id="crafti3" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Rose Lychee Sparkles" data-price="5.25">
+          <label for="crafti3">Rose Lychee Sparkles</label><br>
+          <input type="checkbox" id="crafti4" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Pink Paradise" data-price="5.25">
+          <label for="crafti4">Pink Paradise</label><br>
+          <input type="checkbox" id="crafti5" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Cloudy Caramel" data-price="5.25">
+          <label for="crafti5">Cloudy Caramel</label><br>
+          <input type="checkbox" id="crafti6" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Matcha Lavender Milk Tea" data-price="5.25">
+          <label for="crafti6">Matcha Lavender Milk Tea</label><br>
+          <input type="checkbox" id="crafti7" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Yogurt Green Tea" data-price="5.25">
+          <label for="crafti7">Yogurt Green Tea</label><br>
+          <input type="checkbox" id="crafti8" name="craftiSpecialty" class="item" onClick="updatePrice()" value="Thai Iced Tea" data-price="4.75">
+          <label for="crafti8">Thai Iced Tea</label><br>
+        </fieldset>
+        <fieldset id="milktea">
+          <legend>Classic Milk Tea:</legend>
+          <input type="checkbox" id="milktea1" name="classicMilkTea" class="item" onClick="updatePrice()" value="Earl Grey Milk Tea" data-price="4.75">
+          <label for="milktea1">Earl Grey Milk Tea</label><br>
+          <input type="checkbox" id="milktea2" name="classicMilkTea" class="item" onClick="updatePrice()" value="House Oolong Milk Tea" data-price="4.75">
+          <label for="milktea2">House Oolong Milk Tea</label><br>
+          <input type="checkbox" id="milktea3" name="classicMilkTea" class="item" onClick="updatePrice()" value="Jasmine Green Milk Tea" data-price="4.75">
+          <label for="milktea3">Jasmine Green Milk Tea</label><br>
+        </fieldset>
+        <fieldset id="freshtea">
+          <legend>Freshly Brewed Tea:</legend>
+          <input type="checkbox" id="tea1" name="freshlyBrewedTea" class="item" onClick="updatePrice()" value="Earl Grey Tea" data-price="4.50">
+          <label for="tea1">Earl Grey Tea</label><br>
+          <input type="checkbox" id="tea2" name="freshlyBrewedTea" class="item" onClick="updatePrice()" value="House Oolong Tea" data-price="4.50">
+          <label for="tea2">House Oolong Tea</label><br>
+          <input type="checkbox" id="tea3" name="freshlyBrewedTea" class="item" onClick="updatePrice()" value="Jasmine Green Tea" data-price="4.50">
+          <label for="tea3">Jasmine Green Tea</label><br>
+        </fieldset>
+        <fieldset id="fruittea">
+          <legend>Refreshing Fruit Tea:</legend>
+          <input type="checkbox" id="fruit1" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Lychee Green Tea" data-price="4.75">
+          <label for="fruit1">Lychee Green Tea</label><br>
+          <input type="checkbox" id="fruit2" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Pineapple Green Tea" data-price="4.75">
+          <label for="fruit2">Pineapple Green Tea</label><br>
+          <input type="checkbox" id="fruit3" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Pineapple Earl Grey Tea" data-price="4.75">
+          <label for="fruit3">Pineapple Earl Grey Tea</label><br>
+          <input type="checkbox" id="fruit4" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Passion Fruit Green Tea" data-price="4.75">
+          <label for="fruit4">Passion Fruit Green Tea</label><br>
+          <input type="checkbox" id="fruit5" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Strawberry Lemon Green Tea" data-price="4.75">
+          <label for="fruit5">Strawberry Lemon Green Tea</label><br>
+          <input type="checkbox" id="fruit6" name="refreshingFruitTea" class="item" onClick="updatePrice()" value="Strawberry Rose Earl Grey Tea" data-price="4.75">
+          <label for="fruit6">Strawberry Rose Earl Grey Tea</label><br>
+        </fieldset>
+        <fieldset>
+          <legend>Toppings:</legend>
+          <input type="checkbox" id="topping1" name="toppings" class="item" onClick="updatePrice()" value="Signature Boba" data-price="0.75">
+          <label for="topping1">Signature Boba</label><br>
+          <input type="checkbox" id="topping2" name="toppings" class="item" onClick="updatePrice()" value="Pink Crystals" data-price="0.75">
+          <label for="topping2">Pink Crystals</label><br>
+          <input type="checkbox" id="topping3" name="toppings" class="item" onClick="updatePrice()" value="Lychee Jelly" data-price="0.75">
+          <label for="topping3">Lychee Jelly</label><br>
+          <input type="checkbox" id="topping4" name="toppings" class="item" onClick="updatePrice()" value="Rose Jelly" data-price="0.75">
+          <label for="topping4">Rose Jelly</label><br>
+          <input type="checkbox" id="topping5" name="toppings" class="item" onClick="updatePrice()" value="Oolong Jelly" data-price="0.75">
+          <label for="topping5">Oolong Jelly</label><br>
+          <input type="checkbox" id="topping6" name="toppings" class="item" onClick="updatePrice()" value="Cotton Foam" data-price="0.75">
+          <label for="topping6">Cotton Foam</label><br>
+        </fieldset>
+        <fieldset id="ice">
+          <legend>Ice Level:</legend>
+          <input type="radio" id="ice1" name="iceLevel" value="Regular">
+          <label for="ice">Regular Ice</label><br>
+          <input type="radio" id="ice2" name="iceLevel" value="Less">
+          <label for="ice">Less Ice</label><br>
+          <input type="radio" id="ice3" name="iceLevel" value="No">
+          <label for="ice">No Ice</label><br>
+        </fieldset>
+        <fieldset id="sugar">
+          <legend>Sugar Level:</legend>
+          <input type="radio" id="sugar1" name="sugarLevel" value="100">
+          <label for="sugar">100%</label><br>
+          <input type="radio" id="sugar2" name="sugarLevel" value="75">
+          <label for="sugar">75%</label><br>
+          <input type="radio" id="sugar3" name="sugarLevel" value="50">
+          <label for="sugar">50%</label><br>
+          <input type="radio" id="sugar4" name="sugarLevel" value="25">
+          <label for="sugar">25%</label><br>
+          <input type="radio" id="sugar5" name="sugarLevel" value="0">
+          <label for="sugar">0%</label><br>
+        </fieldset>
+    </div>
+    <div class="total-container">
+      <label for ="subtotal">Subtotal:</label>
+      <span id="subtotal-price">$0.00</span>
+      <input type="hidden" id="subtotal" name="subtotal" value="">
+      <br>
+      <label for ="taxes">Taxes:</label>
+      <span id="taxes-price">$0.00</span>
+      <input type="hidden" id="tax" name="tax" value="">
+      <br>
+      <label for ="total">Total amount:</label>
+      <span id="total-price">$0.00</span>
+      <input type="hidden" id="total" name="total" value="">
+    </div>
+
+    <!-- drop down menu for the time -->
+    <br>
+    <label for="pickuptime">Approximately, how long until you arrive?</label>
+    <br>
+    <div class="inline-field">
+      <select name="time" id="pickuptime">
+        <option value="15">15 Minutes</option>
+        <option value="30">30 Minutes</option>
+        <option value="45">45 Minutes</option>
+        <option value="60">60 Minutes</option>  
+      </select>
+    </div>
+   <br>
+   <button type="submit" class="btn orange">Order Now!</button>
+</div>
+</form> 
+
+<script type="text/javascript">
+
+function updatePrice() {
+    let price = 0.00, taxes=.086;
+    const checkboxes = document.getElementsByClassName("item");
+    for(let i = 0; i < checkboxes.length; i++) {
+        if(checkboxes[i].checked) price += parseFloat(checkboxes[i].getAttribute('data-price'));
+    }
+
+    document.getElementById("subtotal-price").innerText = "$" + price.toFixed(2);
+    document.getElementById("subtotal").value = price.toFixed(2);
+    document.getElementById("taxes-price").innerText = "$" + (taxes*price).toFixed(2);
+    document.getElementById("tax").value = (taxes*price).toFixed(2)
+    document.getElementById("total-price").innerText = "$" + ((price*taxes) + price).toFixed(2);
+    document.getElementById("total").value = ((price*taxes) + price).toFixed(2);
+}
+
+function limitCheckboxSelection() {
+  const fieldsetIds = ["specialty", "milktea", "fruittea", "freshtea"];
+  const checkboxes = document.querySelectorAll('#specialty input[type="checkbox"], #milktea input[type="checkbox"], #fruittea input[type="checkbox"], #freshtea input[type="checkbox"]');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+      const numChecked = checkboxes.length - document.querySelectorAll('#specialty input[type="checkbox"]:not(:checked), #milktea input[type="checkbox"]:not(:checked), #fruittea input[type="checkbox"]:not(:checked), #freshtea input[type="checkbox"]:not(:checked)').length;
+
+      if (numChecked > 1) {
+        checkbox.checked = false;
+      } else {
+        fieldsetIds.forEach(fieldsetId => {
+          if (fieldsetId !== "specialty" && fieldsetId !== "milktea" && fieldsetId !== "fruittea" && fieldsetId !== "freshtea") {
+            return;
+          }
+          const fieldset = document.getElementById(fieldsetId);
+          const fieldsetCheckboxes = fieldset.querySelectorAll('input[type="checkbox"]');
+          fieldsetCheckboxes.forEach(cb => {
+            if (cb !== checkbox) {
+              cb.checked = false;
+            }
+          });
+        });
+      }
+    });
+  });
+}
+
+function limitCheckbox(fieldsetId) {
+  const fieldset = document.getElementById(fieldsetId);
+  const checkboxes = fieldset.querySelectorAll('input[type="checkbox"]');
+  
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('click', () => {
+      checkboxes.forEach(cb => {
+        if (cb !== checkbox) {
+          cb.checked = false;
+        }
+      });
+    });
+  });
+}
+
+limitCheckbox("sugar");
+limitCheckbox("ice");
+limitCheckboxSelection();
+updatePrice();
+</script>
+
+<script type="text/javascript" src="js/node.js"></script>
+
+</body>
+</html>

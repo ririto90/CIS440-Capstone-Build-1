@@ -1,0 +1,30 @@
+body {
+    background-image: url("../images/boba.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    color: #81574c;
+}
+
+.menu-bar-container
+{
+    text-align: center;
+}
+
+#logo{
+    display:inline-block;
+    width:150px;
+    height:75px;
+    margin:auto;
+}
+
+div.account
+{
+    padding: 15px;
+    margin: 20px auto;
+    border: black 2px solid;
+    background-color: #FFE8C9;
+    width: 20%;
+    text-align: center;
+}
